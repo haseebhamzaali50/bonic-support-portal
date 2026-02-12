@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Raise Ticket - Bonic Support</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #0f0f0f;
+        }
+    </style>
+</head>
+
+<body class="text-white font-sans">
+
+<div class="min-h-screen px-6 py-12">
+
+    <h1 class="text-3xl md:text-4xl font-bold mb-8 text-center">
+        Raise a Service Ticket
+    </h1>
+
+    <div class="max-w-2xl mx-auto bg-gray-900 p-8 rounded-2xl shadow-lg">
+
+        <form id="ticketForm" class="space-y-6">
+
+            <div>
+                <label class="block mb-2 text-gray-400">Full Name</label>
+                <input id="name" type="text" required
+                    class="w-full p-3 rounded-xl bg-gray-800 border border-gray-700">
+            </div>
+
+            <div>
+                <label class="block mb-2 text-gray-400">Email Address</label>
+                <input id="email" type="email" required
+                    class="w-full p-3 rounded-xl bg-gray-800 border border-gray-700">
+            </div>
+
+            <div>
+                <label class="block mb-2 text-gray-400">Phone Number</label>
+                <input id="phone" type="text" required
+                    class="w-full p-3 rounded-xl bg-gray-800 border border-gray-700">
+            </div>
+
+            <div>
+                <label class="block mb-2 text-gray-400">Product</label>
+                <select id="product"
+                    class="w-full p-3 rounded-xl bg-gray-800 border border-gray-700">
+                    <option>Bonic Bot S1</option>
+                    <option>Bonic Bot A1</option>
+                    <option>Bonic Bot A2</option>
+                    <option>Bonic Bot M1</option>
+                </select>
+            </div>
+
+            <div>
+                <label class="block mb-2 text-gray-400">Issue Category</label>
+                <select id="category"
+                    class="w-full p-3 rounded-xl bg-gray-800 border border-gray-700">
+                    <option>Mechanical Issue</option>
+                    <option>Software Issue</option>
+                    <option>Electrical Issue</option>
+                    <option>Calibration Issue</option>
+                    <option>Robot is dead</option>
+                    <option>Charging issue</option>
+                </select>
+            </div>
+
+            <div>
+                <label class="block mb-2 text-gray-400">Describe the Issue</label>
+                <textarea id="description" rows="4" required
+                    class="w-full p-3 rounded-xl bg-gray-800 border border-gray-700"></textarea>
+            </div>
+
+            <div>
+                <label class="block mb-2 text-gray-400">Upload Image (Max 20MB)</label>
+                <input id="image" type="file"
+                    class="w-full text-gray-400">
+            </div>
+
+            <div>
+                <label class="block mb-2 text-gray-400">
+                    Video Link (Google Drive)
+                </label>
+                <input id="videoLink" type="text"
+                    placeholder="Paste video link here"
+                    class="w-full p-3 rounded-xl bg-gray-800 border border-gray-700">
+            </div>
+
+            <button type="submit"
+                class="w-full bg-orange-500 hover:bg-orange-600 p-3 rounded-xl font-semibold transition">
+                Submit Ticket
+            </button>
+
+        </form>
+
+        <!-- Success Message -->
+        <div id="successMessage" class="hidden mt-6 p-4 bg-green-600 rounded-xl text-center">
+            Ticket Submitted Successfully! Our team will respond within 24 hours.
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+    const form = document.getElementById("ticketForm");
+    const successMessage = document.getElementById("successMessage");
+
+    form.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        // For now, just show success message
+        successMessage.classList.remove("hidden");
+
+        form.reset();
+    });
+</script>
+
+</body>
+</html>
