@@ -3,8 +3,6 @@
 <head>
     <title>Bonic Support Portal</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
@@ -16,26 +14,76 @@
 
 <body class="text-white font-sans">
 
-    <div class="min-h-screen flex flex-col items-center justify-center text-center px-6">
+    <div class="min-h-screen px-6 py-12">
 
-        <h1 class="text-4xl md:text-5xl font-bold mb-6">
-            Bonic Support Portal
-        </h1>
+        <!-- Header -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold mb-4">Bonic Support Portal</h1>
+            <p class="text-gray-400">Service platform for Bonic Robots</p>
+            <p class="text-orange-500 mt-2">We respond within 24 hours</p>
+        </div>
 
-        <p class="text-gray-400 max-w-xl mb-8">
-            Dedicated service platform for Bonic Bot A2 and S1 Robots.
-            We guarantee a response within 24 hours.
-        </p>
+        <!-- Ticket Form -->
+        <div class="max-w-2xl mx-auto bg-gray-900 p-8 rounded-2xl shadow-lg">
 
-        <a href="ticket.html" class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-xl transition">
-            Raise a Service Ticket
-        </a>
+            <h2 class="text-2xl font-semibold mb-6">Raise a Service Ticket</h2>
 
-        <div class="mt-12 text-sm text-gray-600">
-            © 2026 Bonic Bots Support System
+            <form id="ticketForm" class="space-y-4">
+
+                <input type="text" placeholder="Customer Name"
+                    class="w-full p-3 rounded bg-gray-800 border border-gray-700">
+
+                <input type="email" placeholder="Email Address"
+                    class="w-full p-3 rounded bg-gray-800 border border-gray-700">
+
+                <select class="w-full p-3 rounded bg-gray-800 border border-gray-700">
+                    <option>Select Product</option>
+                    <option>Bonic Bot A2</option>
+                    <option>S1 Robot</option>
+                </select>
+
+                <select class="w-full p-3 rounded bg-gray-800 border border-gray-700">
+                    <option>Issue Category</option>
+                    <option>Mechanical</option>
+                    <option>Electrical</option>
+                    <option>Software</option>
+                    <option>Calibration</option>
+                </select>
+
+                <textarea placeholder="Describe the issue..."
+                    class="w-full p-3 rounded bg-gray-800 border border-gray-700 h-28"></textarea>
+
+                <div>
+                    <label class="block mb-2 text-sm text-gray-400">
+                        Upload Image / Video
+                    </label>
+                    <input type="file"
+                        class="w-full text-gray-400">
+                </div>
+
+                <button type="submit"
+                    class="w-full bg-orange-500 hover:bg-orange-600 py-3 rounded-xl transition">
+                    Submit Ticket
+                </button>
+
+            </form>
+
+            <!-- Success Message -->
+            <div id="successMessage"
+                class="hidden mt-6 p-4 bg-green-600 rounded-xl text-center">
+                Ticket submitted successfully! Our team will respond within 24 hours.
+            </div>
+
         </div>
 
     </div>
+
+    <script>
+        document.getElementById("ticketForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            document.getElementById("successMessage").classList.remove("hidden");
+        });
+    </script>
 
 </body>
 </html>
