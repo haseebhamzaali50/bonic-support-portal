@@ -4,86 +4,109 @@
     <title>Bonic Support Portal</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-
     <style>
-        body {
-            background-color: #0f0f0f;
-        }
+        body { background-color: #0f0f0f; }
     </style>
 </head>
 
 <body class="text-white font-sans">
 
-    <div class="min-h-screen px-6 py-12">
+<!-- Navigation -->
+<nav class="flex justify-between items-center px-8 py-6 border-b border-gray-800">
+    <h1 class="text-xl font-bold">Bonic Support</h1>
+    <a href="ticket.html"
+        class="bg-orange-500 hover:bg-orange-600 px-5 py-2 rounded-xl transition">
+        Raise Ticket
+    </a>
+</nav>
 
-        <!-- Header -->
-        <div class="text-center mb-12">
-            <h1 class="text-4xl font-bold mb-4">Bonic Support Portal</h1>
-            <p class="text-gray-400">Service platform for Bonic Robots</p>
-            <p class="text-orange-500 mt-2">We respond within 24 hours</p>
+<!-- Hero Section -->
+<section class="text-center py-20 px-6">
+    <h2 class="text-4xl md:text-5xl font-bold mb-6">
+        Smart Service System for Bonic Robots
+    </h2>
+    <p class="text-gray-400 max-w-2xl mx-auto mb-8">
+        Dedicated support platform for Bonic Bot A2 and S1 Robots.
+        Track issues, communicate with our service team, and get resolution within 24 hours.
+    </p>
+
+    <a href="ticket.html"
+        class="bg-orange-500 hover:bg-orange-600 px-8 py-3 rounded-xl text-lg transition">
+        Open a Service Ticket
+    </a>
+</section>
+
+<!-- Products Section -->
+<section class="py-16 px-6 bg-gray-900">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10">
+
+        <div class="bg-gray-800 p-8 rounded-2xl">
+            <h3 class="text-2xl font-semibold mb-4">Bonic Bot A2</h3>
+            <p class="text-gray-400 mb-4">
+                Advanced robotic solution designed for precision operations.
+                Dedicated support and structured service workflow.
+            </p>
+            <a href="ticket.html"
+                class="text-orange-400 hover:text-orange-500">
+                Get Support →
+            </a>
         </div>
 
-        <!-- Ticket Form -->
-        <div class="max-w-2xl mx-auto bg-gray-900 p-8 rounded-2xl shadow-lg">
-
-            <h2 class="text-2xl font-semibold mb-6">Raise a Service Ticket</h2>
-
-            <form id="ticketForm" class="space-y-4">
-
-                <input type="text" placeholder="Customer Name"
-                    class="w-full p-3 rounded bg-gray-800 border border-gray-700">
-
-                <input type="email" placeholder="Email Address"
-                    class="w-full p-3 rounded bg-gray-800 border border-gray-700">
-
-                <select class="w-full p-3 rounded bg-gray-800 border border-gray-700">
-                    <option>Select Product</option>
-                    <option>Bonic Bot A2</option>
-                    <option>S1 Robot</option>
-                </select>
-
-                <select class="w-full p-3 rounded bg-gray-800 border border-gray-700">
-                    <option>Issue Category</option>
-                    <option>Mechanical</option>
-                    <option>Electrical</option>
-                    <option>Software</option>
-                    <option>Calibration</option>
-                </select>
-
-                <textarea placeholder="Describe the issue..."
-                    class="w-full p-3 rounded bg-gray-800 border border-gray-700 h-28"></textarea>
-
-                <div>
-                    <label class="block mb-2 text-sm text-gray-400">
-                        Upload Image / Video
-                    </label>
-                    <input type="file"
-                        class="w-full text-gray-400">
-                </div>
-
-                <button type="submit"
-                    class="w-full bg-orange-500 hover:bg-orange-600 py-3 rounded-xl transition">
-                    Submit Ticket
-                </button>
-
-            </form>
-
-            <!-- Success Message -->
-            <div id="successMessage"
-                class="hidden mt-6 p-4 bg-green-600 rounded-xl text-center">
-                Ticket submitted successfully! Our team will respond within 24 hours.
-            </div>
-
+        <div class="bg-gray-800 p-8 rounded-2xl">
+            <h3 class="text-2xl font-semibold mb-4">S1 Robot</h3>
+            <p class="text-gray-400 mb-4">
+                Intelligent automation platform built for scalable operations.
+                Raise and track service tickets easily.
+            </p>
+            <a href="ticket.html"
+                class="text-orange-400 hover:text-orange-500">
+                Get Support →
+            </a>
         </div>
 
     </div>
+</section>
 
-    <script>
-        document.getElementById("ticketForm").addEventListener("submit", function(e) {
-            e.preventDefault();
-            document.getElementById("successMessage").classList.remove("hidden");
-        });
-    </script>
+<!-- How It Works -->
+<section class="py-20 px-6 text-center">
+    <h3 class="text-3xl font-bold mb-12">How It Works</h3>
+
+    <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-10">
+
+        <div>
+            <div class="text-orange-500 text-4xl mb-4">1</div>
+            <h4 class="font-semibold mb-2">Raise Ticket</h4>
+            <p class="text-gray-400">Submit issue details through structured form.</p>
+        </div>
+
+        <div>
+            <div class="text-orange-500 text-4xl mb-4">2</div>
+            <h4 class="font-semibold mb-2">Live Conversation</h4>
+            <p class="text-gray-400">Chat-style communication with service team.</p>
+        </div>
+
+        <div>
+            <div class="text-orange-500 text-4xl mb-4">3</div>
+            <h4 class="font-semibold mb-2">Resolution & Closure</h4>
+            <p class="text-gray-400">Track updates and close ticket after resolution.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- SLA Section -->
+<section class="py-16 px-6 bg-gray-900 text-center">
+    <h3 class="text-3xl font-bold mb-6">24-Hour Response Guarantee</h3>
+    <p class="text-gray-400 max-w-2xl mx-auto">
+        Our support team ensures every ticket receives an initial response within 24 hours.
+        We focus on structured service management and customer satisfaction.
+    </p>
+</section>
+
+<!-- Footer -->
+<footer class="py-8 text-center text-gray-500 border-t border-gray-800">
+    © 2026 Bonic Support System Prototype
+</footer>
 
 </body>
 </html>
