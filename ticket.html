@@ -106,14 +106,18 @@
     const form = document.getElementById("ticketForm");
     const successMessage = document.getElementById("successMessage");
 
-    form.addEventListener("submit", function(event) {
-        event.preventDefault();
+ form.addEventListener("submit", function(event) {
+    event.preventDefault();
 
-        // For now, just show success message
-        successMessage.classList.remove("hidden");
+    const ticketID = "BONIC-" + Date.now();
 
-        form.reset();
-    });
+    const description = document.getElementById("description").value;
+
+    localStorage.setItem(ticketID, description);
+
+    window.location.href = "chat.html?id=" + ticketID;
+});
+
 </script>
 
 </body>
